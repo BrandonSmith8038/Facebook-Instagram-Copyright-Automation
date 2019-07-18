@@ -20,7 +20,9 @@ require('dotenv').config();
 		// Click On 'Me or my organization'
 		await driver.findElement(By.xpath('//*[@id="u_0_f"]/label[1]')).click();
 		// Enter Name
-		await driver.findElement(By.name('your_name')).sendKeys(process.env.NAME);
+		await driver
+			.findElement(By.name('your_name'))
+			.sendKeys(process.env.NAME_TEST);
 		// Open Job Responsibility Menu
 		await driver.findElement(By.name('job_rightsholder')).click();
 		// Select The First Opiton
@@ -30,19 +32,19 @@ require('dotenv').config();
 		// Fill Out The Mailing Address Text Box
 		await driver
 			.findElement(By.name('Address'))
-			.sendKeys(process.env.MAILING_ADDRESS);
+			.sendKeys(process.env.MAILING_ADDRESS_TEST);
 		// Fill Out The Phone Field
-		await driver.findElement(By.name('Phone')).sendKeys(process.env.PHONE);
+		await driver.findElement(By.name('Phone')).sendKeys(process.env.PHONE_TEST);
 		// Fill Out The Email Field
-		await driver.findElement(By.name('email')).sendKeys(process.env.EMAIL);
+		await driver.findElement(By.name('email')).sendKeys(process.env.EMAIL_TEST);
 		// Fill Out The Confirm Email Field
 		await driver
 			.findElement(By.name('confirm_email'))
-			.sendKeys(process.env.EMAIL);
+			.sendKeys(process.env.EMAIL_TEST);
 		// Fill Out The Rights Holder Field
 		await driver
 			.findElement(By.name('reporter_name'))
-			.sendKeys(process.env.RIGHTS_HOLDER);
+			.sendKeys(process.env.RIGHTS_HOLDER_TEST);
 
 		// Choose United States
 		await driver.findElement(By.xpath('//*[@id="u_0_i"]/label[1]')).click();
@@ -53,7 +55,7 @@ require('dotenv').config();
 		// Enter IN the Photos Location On Facebook
 		await driver
 			.findElement(By.name('content_urls'))
-			.sendKeys(process.env.USERS_LOCATION);
+			.sendKeys(process.env.USERS_LOCATION_TEST);
 		// Open Why are you reporting this content? Menu
 		await driver.findElement(By.name('why_reporting_me')).click();
 		// Select The First Opiton
@@ -75,7 +77,7 @@ require('dotenv').config();
 		// Enter IN the Photos Original Location On My Website
 		await driver
 			.findElement(By.name('describe_copyrighted_work_me_URLs'))
-			.sendKeys(process.env.ORIGINAL_LOCATION);
+			.sendKeys(process.env.ORIGINAL_LOCATION_TEST);
 		// Choose Confirm declaration statement
 		await driver.findElement(By.xpath('//*[@id="u_0_11"]/label[1]')).click();
 		// Choose Do you agree?
@@ -83,9 +85,9 @@ require('dotenv').config();
 		// FIll Out Electronic Signature
 		await driver
 			.findElement(By.name('Electronic_sig'))
-			.sendKeys(process.env.NAME);
+			.sendKeys(process.env.NAME_TEST);
 		// CLick Submit Button
-		await driver.findElement(By.id('u_0_1b')).click();
+		//await driver.findElement(By.id('u_0_1b')).click();
 	} finally {
 		//await driver.quit();
 	}
