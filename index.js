@@ -10,43 +10,43 @@ inquirer
 			type: 'list',
 			name: 'facebookOrInsta',
 			message: 'Facebook or Instagram',
-			choices: ['Facebook', 'Instagram'],
+			choices: ['Facebook 👍', 'Instagram 📷'],
 		},
 		{
 			type: 'list',
 			name: 'testMode',
-			message: 'Test Mode?',
-			choices: ['Yes', 'No'],
+			message: 'Test Mode? 📝',
+			choices: ['Yes ✅', 'No ⛔'],
 		},
 	])
 	.then(answers => {
-		if (answers.testMode === 'Yes') {
-			if (answers.facebookOrInsta === 'Facebook') {
+		if (answers.testMode === 'Yes ✅') {
+			if (answers.facebookOrInsta === 'Facebook 👍') {
 				facebookTest();
 			}
-			if (answers.facebookOrInsta === 'Instagram') {
+			if (answers.facebookOrInsta === 'Instagram 📷') {
 				instagramTest();
 			}
 		}
-		if (answers.testMode === 'No') {
+		if (answers.testMode === 'No ⛔') {
 			inquirer
 				.prompt([
 					{
 						type: 'text',
 						name: 'usersLocation',
-						message: 'Enter Url Of The Users Photo',
+						message: 'Enter Url Of The Users Photo 🔗',
 					},
 					{
 						type: 'text',
 						name: 'originalLocation',
-						message: 'Enter Url Of The Original Photo',
+						message: 'Enter Url Of The Original Photo 🔗',
 					},
 				])
 				.then(urls => {
-					if (answers.facebookOrInsta === 'Facebook') {
+					if (answers.facebookOrInsta === 'Facebook 👍') {
 						facebook(urls.usersLocation, urls.originalLocation);
 					}
-					if (answers.facebookOrInsta === 'Instagram') {
+					if (answers.facebookOrInsta === 'Instagram 📷') {
 						instagram(urls.usersLocation, urls.originalLocation);
 					}
 				});
