@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
 require('dotenv').config();
 
-(async function example() {
+const facebook = async (userLocation, originalLocation) => {
 	let driver = await new Builder().forBrowser('chrome').build();
 	try {
 		// Open Url
@@ -51,9 +51,7 @@ require('dotenv').config();
 		// Choose Photo, video or post
 		await driver.findElement(By.xpath('//*[@id="u_0_m"]/label[1]')).click();
 		// Enter IN the Photos Location On Facebook
-		await driver
-			.findElement(By.name('content_urls'))
-			.sendKeys(process.env.USERS_LOCATION);
+		await driver.findElement(By.name('content_urls')).sendKeys(userLocation);
 		// Open Why are you reporting this content? Menu
 		await driver.findElement(By.name('why_reporting_me')).click();
 		// Select The First Opiton
@@ -75,7 +73,7 @@ require('dotenv').config();
 		// Enter IN the Photos Original Location On My Website
 		await driver
 			.findElement(By.name('describe_copyrighted_work_me_URLs'))
-			.sendKeys(process.env.ORIGINAL_LOCATION);
+			.sendKeys(originalLocation);
 		// Choose Confirm declaration statement
 		await driver.findElement(By.xpath('//*[@id="u_0_11"]/label[1]')).click();
 		// Choose Do you agree?
@@ -85,8 +83,10 @@ require('dotenv').config();
 			.findElement(By.name('Electronic_sig'))
 			.sendKeys(process.env.NAME);
 		// CLick Submit Button
-		await driver.findElement(By.id('u_0_1b')).click();
+		//await driver.findElement(By.id('u_0_1b')).click();
 	} finally {
 		//await driver.quit();
 	}
-})();
+};
+
+module.exports = facebook;

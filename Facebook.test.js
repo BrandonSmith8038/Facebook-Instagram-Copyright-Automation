@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
 require('dotenv').config();
 
-(async function example() {
+const facebookTest = async () => {
 	let driver = await new Builder().forBrowser('chrome').build();
 	try {
 		// Open Url
@@ -91,4 +91,6 @@ require('dotenv').config();
 	} finally {
 		//await driver.quit();
 	}
-})();
+};
+
+module.exports = facebookTest;
