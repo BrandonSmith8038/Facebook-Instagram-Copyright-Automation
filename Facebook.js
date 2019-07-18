@@ -83,7 +83,7 @@ const facebook = async (userLocation, originalLocation) => {
 			.findElement(By.name('Electronic_sig'))
 			.sendKeys(process.env.NAME);
 		// CLick Submit Button
-		//await driver.findElement(By.id('u_0_1b')).click();
+		await driver.findElement(By.id('u_0_1b')).click();
 	} finally {
 		//await driver.quit();
 	}

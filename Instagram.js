@@ -83,7 +83,7 @@ const instagram = async (usersLocation, originalLocation) => {
 			.findElement(By.name('Electronic_sig'))
 			.sendKeys(process.env.NAME);
 		// CLick Submit Button
-		//await driver.findElement(By.id('u_0_18')).click();
+		await driver.findElement(By.id('u_0_18')).click();
 	} finally {
 		//await driver.quit();
 	}
