@@ -77,7 +77,11 @@ const facebookTest = async () => {
 		// Enter IN the Photos Original Location On My Website
 		await driver
 			.findElement(By.name('describe_copyrighted_work_me_URLs'))
-			.sendKeys(process.env.ORIGINAL_LOCATION_TEST);
+			.sendKeys(
+				`${
+					process.env.ORIGINAL_LOCATION_TEST
+				} \n This Photo is available for sale on my website, the user took a screenshot instead of purchasing the photo.`,
+			);
 		// Choose Confirm declaration statement
 		await driver.findElement(By.xpath('//*[@id="u_0_11"]/label[1]')).click();
 		// Choose Do you agree?

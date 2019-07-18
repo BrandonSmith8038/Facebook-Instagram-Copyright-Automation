@@ -73,7 +73,9 @@ const facebook = async (userLocation, originalLocation) => {
 		// Enter IN the Photos Original Location On My Website
 		await driver
 			.findElement(By.name('describe_copyrighted_work_me_URLs'))
-			.sendKeys(originalLocation);
+			.sendKeys(
+				`${originalLocation} \n This Photo is available for sale on my website, the user took a screenshot instead of purchasing the photo.`,
+			);
 		// Choose Confirm declaration statement
 		await driver.findElement(By.xpath('//*[@id="u_0_11"]/label[1]')).click();
 		// Choose Do you agree?
